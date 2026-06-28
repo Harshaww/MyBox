@@ -1,96 +1,73 @@
-# IMDb-Clone
+# IMDB-Rating
 
-## Commands to Start the Application:
-- **Run main_app.py**
-  - From the terminal: Run `main_app.py`.
-  - Activate the virtual environment: `.\venv\Scripts\activate`.
+A Python-based desktop movie analytics application built with tkinter and ttkbootstrap, featuring a content-based recommendation engine, interactive visualizations, and movie comparison tools across a dataset of 1,000 films.
 
+## Setup
 
-## Operating Systems Supported
+pip install scikit-learn ttkbootstrap pillow pandas matplotlib fuzzywuzzy python-levenshtein
 
-- Windows
+python main_app.py
 
-## Libraries To Install
+## Tech Stack
 
-- ttkbootstrap  
-- pandas  
-- matplotlib  
-- numpy  
-- fuzzywuzzy  
-- python-Levenshtein  
-- tkinter  
-- random  
-- datetime  
+Python, tkinter, ttkbootstrap, pandas, scikit-learn, Matplotlib, FuzzyWuzzy
 
-## APIs Used
+## Features
 
-- **OMDb API** – Used for retrieving detailed movie information such as plot, cast, director, genre, runtime, and release year.  
-- **TMDb API** – Used for retrieving and analyzing movie ratings and related metadata.
-
-## Features Implemented
+### Recommendation Engine
+- Content-based recommendation system using TF-IDF vectorization and cosine similarity
+- Computes similarity across genre, director, cast, and synopsis metadata for 1,000 films
+- Returns top-6 similar movies ranked by match percentage
+- Similarity matrix fitted once at startup for instant query response
+- Accessible via the "Similar Movies" button on any movie detail page
 
 ### Authentication
-- Login page
-- New user registration
-- Persistent user sessions
+- Login and registration pages
+- Persistent user sessions across app restarts
 
 ### Main Dashboard
-- Displays top 12 movies
-- Interactive movie selection
-- Clicking on a movie displays:
-- Plot
-- Director
-- Cast
-- Genre
-- Synopsis
-- Duration
-- IMDb rating
-- Release year
+- Displays top 12 movies on load
+- Click any poster to open full movie details including plot, director, cast, genre, synopsis, duration, rating, and release year
 
-### Search and Sorting
-- Search bar with fuzzy matching
-- Sorting options:
-- By release year
-- By genre
+### Search and Filtering
+- Fuzzy search using FuzzyWuzzy for typo-tolerant title matching
+- Filter by release year range
+- Filter by genre
 
 ### Wishlist
-- Save movies of interest
-- Wishlist persists across sessions
-- Data retained even after logout
+- Save movies across sessions
+- Persists after logout
 
 ### Data Visualization
-- **Line Graphs**
-- Displays rating trends over:
- - 1st day
- - 1st month
- - 3 months
- - 6 months
- - 1 year
-- **Creative Mode (Bar Graphs)**
-- Average IMDb ratings by:
- - Actor
- - Actress
- - Director
- - Genre
+- Line graphs showing rating trends over time
+- Animated bar graphs comparing average IMDb ratings by actor, actress, director, and genre
 
-### Reports & Analysis
-- Compare two movies across multiple metrics
-- Generate:
-- Top 5 movies by genre
-- Top 5 movies by user-specified year
+### Reports
+- Side-by-side movie comparison across multiple metrics
+- Top 5 movies by genre report
+- Top 5 movies by year report
 
-## Architecture Overview
+## Project Structure
 
-- Modular design separating UI, API integration, data processing, and visualization logic
-- Secure and organized user data management
-- Smooth navigation between application pages
-- Efficient backend automation
-
-## Documentation
-
-Detailed documentation of all modules and classes is available within the codebase.
+main_app.py                 — Entry point
+dashboard_page.py           — Main dashboard UI
+movie_data.py               — Movie detail window
+recommender.py              — TF-IDF recommendation engine
+recommendation_window.py    — Recommendation UI
+search_movie.py             — Fuzzy search and filters
+login_page.py               — Login UI
+registration_page.py        — Registration UI
+wishlist_window.py          — Wishlist UI
+Report_window.py            — Report generation
+Visualizer1-4.py            — Animated bar graph visualizers
+line_vis.py                 — Line graph visualizer
+genre.py                    — Genre-based filtering
+year.py                     — Year-based filtering
+user_profile.py             — User profile UI
+movie_comparision.py        — Movie comparison UI
+final_movie_data.csv        — 1,000 movie dataset
 
 ## Author
 
-**Samavedam Sai Harsha**
-
+Samavedam Sai Harsha
+GitHub: https://github.com/Harshaww
