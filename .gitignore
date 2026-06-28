@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+username_password.csv
+last_login.csv
+last_login.txt
+movie_posters/
+.DS_Store
+Thumbs.db
